@@ -46,11 +46,16 @@
     <string name="title_activity_order">Danh sách Order</string>
     <string name="title_activity_chitietmenu">Thông tin món ăn</string>
     <string name="title_activity_menufood">Danh mục món ăn</string>
-    <string name="title_activity_menu_update">Cài đặt chung</string>
+    <string name="title_activity_menu_update">Thêm món ăn</string>
+    <string name="title_activity_nhanvien_update">Quản lý nhân viên</string>
     <string name="title_activity_menugroup_updte">Nhóm món ăn</string>
     <string name="title_activity_thanhtoan">Thanh toán</string>
     <string name="title_activity_tabled_order">Cửa sổ nhanh</string>
     <string name="title_activity_thong_ke">Hoạt động trong ngày</string>
+    <string name="title_activity_menu">Thực đơn</string>
+    <string name="title_activity_setting">Quản lý</string>
+    <string name="title_activity_table_update">Thêm bàn</string>
+
 
     <!--Activity chi tiết nemu!-->
     <string name="activity_chi_tiet_menu_Ten_mon">Tên món</string>

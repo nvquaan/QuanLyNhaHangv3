@@ -24,7 +24,8 @@
             android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.MenuActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_menu"
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.OrderActivity"
             android:label="@string/title_activity_tabbled_order"
@@ -43,7 +44,7 @@
             android:parentActivityName=".update_button.MenuUpdateActivity" />
         <activity
             android:name=".update_button.MenuUpdateActivity"
-            android:label="@string/title_activity_menu_update"
+            android:label="@string/title_activity_setting"
             android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".update_button.UpdateMenuGroup"
@@ -53,7 +54,10 @@
             android:name=".activity.ThanhToanActivity"
             android:label="@string/title_activity_thanhtoan"
             android:parentActivityName=".activity.TableList" />
-        <activity android:name=".update_button.InsertTable" />
+        <activity android:name=".update_button.InsertTable"
+            android:label="@string/title_activity_table_update"
+            android:parentActivityName=".activity.MenuActivity" />
+
         <activity android:name=".update_button.InsertKhuvuc" />
         <activity android:name=".update_button.UpdateFoodPhoto" />
         <activity
@@ -77,7 +81,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.NhanVienActivity" />
+        <activity android:name=".activity.NhanVienActivity"
+            android:label="@string/title_activity_nhanvien_update"
+            android:parentActivityName=".update_button.MenuUpdateActivity" />
         <activity
             android:name=".activity.ThongKeActivity"
             android:theme="@style/AppTheme.NoActionBar"

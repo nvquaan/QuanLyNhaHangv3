@@ -20,11 +20,17 @@ public class DangNhapActivity extends AppCompatActivity {
     EditText edTenDN, edMatKhauDN;
     String DATABASE_NAME = "QLNhaHang.sqlite";
     SQLiteDatabase database;
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_nhap);
         database=Database.initDatabase(this,DATABASE_NAME);
+        message = getIntent().getStringExtra("message");
+        if(message != null) {
+            Toast.makeText(DangNhapActivity.this ,message, Toast.LENGTH_SHORT).show();
+        }
+
         addControls();
 
         HienThiButton();

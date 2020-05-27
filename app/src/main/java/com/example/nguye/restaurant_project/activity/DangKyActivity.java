@@ -2,6 +2,7 @@ package com.example.nguye.restaurant_project.activity;
 
 import android.app.DialogFragment;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -205,7 +206,11 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
         contentValues.put("CMND", CMND);
         contentValues.put("maQuyen", maQuyen);
         long r = database.insert("NhanVien", null, contentValues);
-        Toast.makeText(this, "Them" + r, Toast.LENGTH_SHORT).show();
+        if(r > 0) {
+            Intent intent = new Intent(this, DangNhapActivity.class);
+            intent.putExtra("message", "Đăng ký thành công!");
+            startActivity(intent);
+        }
     }
 
     private void SuaNhanVien(int CMND, int maQuyen, String tenDN, String matKhau, String gioiTinh, String ngaySinh) {

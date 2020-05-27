@@ -46,7 +46,8 @@
     <string name="title_activity_order">Danh sách Order</string>
     <string name="title_activity_chitietmenu">Thông tin món ăn</string>
     <string name="title_activity_menufood">Danh mục món ăn</string>
-    <string name="title_activity_menu_update">Cài đặt chung</string>
+    <string name="title_activity_menu_update">Thêm món ăn</string>
+    <string name="title_activity_nhanvien_update">Quản lý nhân viên</string>
     <string name="title_activity_menugroup_updte">Nhóm món ăn</string>
     <string name="title_activity_thanhtoan">Thanh toán</string>
     <string name="title_activity_tabled_order">Cửa sổ nhanh</string>
@@ -82,6 +83,10 @@
     <string name="activity_thanh_toan_button_themmon">add dishes</string>
     <string name="activity_thanh_toan_thaydoisl">change the quantity</string>
     <string name="activity_thanh_toan_huymon">cancel the dish</string>
+    <string name="title_activity_menu">Thực đơn</string>
+    <string name="title_activity_setting">Quản lý</string>
+    <string name="title_activity_table_update">Thêm bàn</string>
+
 
     <!--Thống kê!-->
 
