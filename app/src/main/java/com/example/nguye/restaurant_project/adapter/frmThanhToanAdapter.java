@@ -16,7 +16,7 @@ import com.example.nguye.restaurant_project.model.Order;
 import java.util.ArrayList;
 
 /**
- * Created by Admin on 1/30/2018.
+ * Created by Admin on 1/30/2020.
  */
 
 public class frmThanhToanAdapter extends ArrayAdapter<Order> {

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Admin on 4/23/2018.
+ * Created by Admin on 4/23/2020.
  */
 
 public class HoaDonTheoMaNVAdapter extends ArrayAdapter<Order> {

@@ -17,7 +17,7 @@ import com.example.nguye.restaurant_project.model.TKMonBanChay;
 import java.util.List;
 
 /**
- * Created by nguye on 2/1/2018.
+ * Created by nguye on 2/1/2020.
  */
 
 public class TKMonBanChayAdapter extends ArrayAdapter<TKMonBanChay> {
