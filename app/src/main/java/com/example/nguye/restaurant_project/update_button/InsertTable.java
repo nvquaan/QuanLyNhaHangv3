@@ -56,7 +56,6 @@ public class InsertTable extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 lastSelectedItem = dsContents.get(i).getId();
-                Toast.makeText(InsertTable.this, "Bạn chọn "+ dsContents.get(i).getTenKhuVuc(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

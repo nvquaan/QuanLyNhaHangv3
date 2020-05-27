@@ -173,7 +173,7 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
                     }
                     int maQuyen;
                     if (landautien == 1) {
-                        maQuyen = 1;
+                        maQuyen = 0;
                     } else {
                         int vitri = spQuyen.getSelectedItemPosition();
                         maQuyen = quyenList.get(vitri).getMaQuyen();
