@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
     ImageView imgMenu;
     ArrayList<Menu> dsContents;
     MenuAdapter menuAdapter;
-
+    public static int idGroupFood;
     String DATABASE_NAME = "QLNhaHang.sqlite";
     String DB_PATH_SUFFIX = "/databases/";
     SQLiteDatabase database = null;
@@ -59,12 +59,12 @@ public class MenuActivity extends AppCompatActivity {
         lvMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int idGroup=dsContents.get(i).getTxtIdGroup();
+                idGroupFood=dsContents.get(i).getTxtIdGroup();
 //                txtIdGroupMenu = view.findViewById(R.id.txtGroupMenu);
 //                int idGroup = Integer.parseInt(txtIdGroupMenu.getText().toString());
                 Intent intent = new Intent(MenuActivity.this,MenuFoodActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("idbundle",idGroup);
+                bundle.putInt("idbundle",idGroupFood);
                 intent.putExtra("id",bundle);
                 startActivity(intent);
             }

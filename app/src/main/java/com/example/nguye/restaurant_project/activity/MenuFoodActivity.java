@@ -67,7 +67,7 @@ public class MenuFoodActivity extends AppCompatActivity {
         //Nhận id group menu từ activity MenuActivity để select ra món ăn theo nhóm
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("id");
-        int id = bundle.getInt("idbundle");
+        int id = MenuActivity.idGroupFood;
         //bắt đầu select
         database = openOrCreateDatabase(DATABASE_NAME,MODE_PRIVATE,null);
         String query = "select * from Food where IDGroupMenu = " + id;
