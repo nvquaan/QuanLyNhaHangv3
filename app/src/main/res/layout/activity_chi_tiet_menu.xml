@@ -33,20 +33,6 @@
         android:layout_margin="20dp"
         android:layout_height="150dp" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="56dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        android:id="@+id/floatingActionButtonCT"
-        android:layout_weight="0.06"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/txtNen"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="@string/activity_chi_tiet_menu_Ten_mon"
@@ -71,12 +57,11 @@
         android:layout_alignStart="@+id/txtTenCT" />
 
     <Button
-        android:text="@string/activity_chi_tiet_menu_Button_dat_ban"
-        android:visibility="invisible"
+        android:id="@+id/btnGotoDatBan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnGotoDatBan"
-        android:layout_alignTop="@+id/floatingActionButtonCT"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp" />
+        android:layout_alignTop="@+id/txtNen"
+        android:layout_marginTop="202dp"
+        android:layout_centerInParent="true"
+        android:text="@string/activity_chi_tiet_menu_Button_dat_ban" />
 </RelativeLayout>

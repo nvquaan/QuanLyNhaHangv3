@@ -27,7 +27,7 @@ public class ChiTietMenu extends AppCompatActivity {
     TextView txtTenCT;
     TextView txtGiaCT;
     Button btnGotoDatBan;
-    FloatingActionButton floatingActionButtonCT;
+
     ImageView imgCT;
 
     String sTenCT;
@@ -36,14 +36,13 @@ public class ChiTietMenu extends AppCompatActivity {
     Bitmap bitmap;
 
     String DATABASE_NAME = "QLNhaHang.sqlite";
-    String DB_PATH_SUFFIX = "/databases/";
     SQLiteDatabase database = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chi_tiet_menu);
-//        xuLySaoChepCsdlTuAssetVaoHeThong();
+
         addControls();
         addEvents();
     }
@@ -52,13 +51,11 @@ public class ChiTietMenu extends AppCompatActivity {
         txtTenCT = (TextView) findViewById(R.id.txtTenCT);
         txtGiaCT = (TextView) findViewById(R.id.txtGiaCT);
         imgCT = (ImageView) findViewById(R.id.imgCT);
-        floatingActionButtonCT = (FloatingActionButton) findViewById(R.id.floatingActionButtonCT);
         btnGotoDatBan = (Button) findViewById(R.id.btnGotoDatBan);
     }
 
     private void addEvents() {
         xuLyHienCT();
-        xuLyClickFloatingButton();
         xuLyBtnGotoDatBan();
     }
 
@@ -73,22 +70,7 @@ public class ChiTietMenu extends AppCompatActivity {
         });
     }
 
-    private void xuLyClickFloatingButton() {
-        floatingActionButtonCT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(MainActivity.trangThai==false)
-                {
-                    Toast.makeText(ChiTietMenu.this,"Bạn phải đặt bàn trước!",Toast.LENGTH_SHORT).show();
-                    btnGotoDatBan.setVisibility(View.VISIBLE);
 
-                }else
-                {
-                    Toast.makeText(ChiTietMenu.this,"Lấy được: "+sTenCT+" giá: "+ iGiaCT,Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 
     private void xuLyHienCT() {
         // Nhận id món ăn từ activity MenuFoodActivity
