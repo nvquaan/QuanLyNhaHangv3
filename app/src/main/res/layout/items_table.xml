@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:id="@+id/linearLayoutBan"
+    android:background="@drawable/dinhdang_khuvuc">
+
+
+        <TextView
+            android:id="@+id/txtTenBan"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.65"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/activity_insert_table_ban"
+            android:textAllCaps="true"
+            android:textColor="#07149f"
+            android:textSize="15dp"></TextView>
+
+
+</LinearLayout>

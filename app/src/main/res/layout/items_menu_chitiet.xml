@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="#ccf5ff"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:elevation="10dp"
+        android:id="@+id/cardView"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/salad"
+            android:layout_alignParentTop="true"
+            android:id="@+id/imgChiTiet"
+            android:scaleType="fitXY"
+            android:cropToPadding="false"
+            android:adjustViewBounds="true" />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:text="@string/activity_chi_tiet_menu_Ten_mon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTenChiTiet"
+        android:fontFamily="serif"
+        android:textSize="14dp"
+        android:layout_below="@+id/cardView"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

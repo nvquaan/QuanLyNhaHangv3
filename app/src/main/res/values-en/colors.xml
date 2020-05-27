@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorMenu">#f7a919</color>
+    <color name="colorTable">#049304</color>
+    <color name="color1">#0fbac1</color>
+    <color name="color">#9c0d9c</color>
+    <color name="colorSetting">#a45a5a</color>
+    <color name="colorHelp">#FF3F51B5</color>
+
+
+    <color name="colorBack">#3d3535</color>
+
+    <color name="colorBackground">#e6e3e3</color>
+    
+    <color name="colorStrokeButton">#9f9c9c</color>
+
+    <color name="colorButton">#069b04</color>
+    <color name="colorDongia">#FF0FBAC1</color>
+    <color name="colorText">#FFF2312E</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="blue">#FF2FA72E</color>
+</resources>

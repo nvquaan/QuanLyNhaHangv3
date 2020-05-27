@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nguye.restaurant_project">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.TableList"
+            android:label="@string/title_activity_table_list"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.OrderActivity"
+            android:label="@string/title_activity_tabbled_order"
+            android:parentActivityName=".activity.TableList" />
+        <activity
+            android:name=".activity.ChiTietMenu"
+            android:label="@string/title_activity_chitietmenu"
+            android:parentActivityName=".activity.MenuFoodActivity" />
+        <activity
+            android:name=".activity.MenuFoodActivity"
+            android:label="@string/title_activity_menufood"
+            android:parentActivityName=".activity.MenuActivity" />
+        <activity
+            android:name=".update_button.UpdateActivity"
+            android:label="@string/title_activity_menufood"
+            android:parentActivityName=".update_button.MenuUpdateActivity" />
+        <activity
+            android:name=".update_button.MenuUpdateActivity"
+            android:label="@string/title_activity_menu_update"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".update_button.UpdateMenuGroup"
+            android:label="@string/title_activity_menu_update"
+            android:parentActivityName=".update_button.MenuUpdateActivity" />
+        <activity
+            android:name=".activity.ThanhToanActivity"
+            android:label="@string/title_activity_thanhtoan"
+            android:parentActivityName=".activity.TableList" />
+        <activity android:name=".update_button.InsertTable" />
+        <activity android:name=".update_button.InsertKhuvuc" />
+        <activity android:name=".update_button.UpdateFoodPhoto" />
+        <activity
+            android:name=".activity.TabbleOrderActivity"
+            android:label="@string/title_activity_tabbled_order"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.ThongKe"
+            android:label="Hoạt động trong ngày"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.TKThang" />
+        <activity
+            android:name=".activity.DangKyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.DangNhapActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.NhanVienActivity" />
+        <activity
+            android:name=".activity.ThongKeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/thongke"/>
+        <activity
+            android:name=".activity.ThongKeHoaDonActivity"
+            android:label="@string/thongke" />
+        <activity android:name=".activity.DanhSachHoaDonTheoMaNVActivity"
+            android:label="@string/danhsachhoadon"
+            android:parentActivityName=".activity.ThongKeActivity"></activity>
+    </application>
+
+</manifest>

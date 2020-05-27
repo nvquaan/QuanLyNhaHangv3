@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/HDtrongngay" android:title="@string/hoatdongtrongngay" android:icon="@drawable/lock"></item>
+    <item android:id="@+id/doanhthuNV" android:title="@string/doangthutheonhanvien" android:icon="@drawable/money"></item>
+    <item android:id="@+id/SLkhach" android:title="@string/soluongkhach" android:icon="@drawable/people"></item>
+    <item android:id="@+id/LSphieu" android:title="@string/lichsuphieu" android:icon="@drawable/history"></item>
+    <item android:id="@+id/exit" android:title="@string/roikhoi" android:icon="@drawable/logout"></item>
+</menu>

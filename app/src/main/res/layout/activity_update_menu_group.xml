@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_update_menu_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.nguye.restaurant_project.update_button.UpdateMenuGroup"
+    android:weightSum="1">
+
+    <TextView
+        android:text="@string/activity_update_menu_group_tennhom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="17dp"
+        android:gravity="left|center"
+        android:layout_weight="0.05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtGroupNameInsert" />
+
+    <Button
+        android:text="@string/activity_update_menu_group_button_chonanh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/btnPickGroupPhoto" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_weight="0.05"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgShowGroupPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+
+    <Button
+        android:text="@string/activity_update_menu_group_button_OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/btnGroupInsert" />
+</LinearLayout>

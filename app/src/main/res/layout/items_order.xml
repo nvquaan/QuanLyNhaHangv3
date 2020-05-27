@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginBottom="5dp">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="6">
+
+        <Button
+            android:id="@+id/btnTru"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:textColor="@color/colorButton"
+            android:textSize="40sp"
+            android:layout_weight="0.8"
+            android:background="@color/colorBackground"/>
+        <Button
+            android:id="@+id/btnSoLuong"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="12"
+            android:textSize="20dp"
+            android:background="@color/colorBackground"
+            android:textColor="@color/colorText"
+            android:layout_weight="0.6"/>
+        <TextView
+            android:id="@+id/txtTenMon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="@string/activity_chi_tiet_menu_Ten_mon"
+            android:textSize="20dp"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/txtTongMon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="20000"
+            android:gravity="right|center_vertical"
+            android:textSize="20dp"
+            android:textColor="@color/colorText"
+            android:layout_weight="0.8"/>
+        <Button
+            android:id="@+id/btnCong"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="+"
+            android:textColor="@color/colorButton"
+            android:textSize="30sp"
+            android:layout_weight="0.8"
+            android:background="@color/colorBackground"
+            android:layout_marginLeft="5dp"/>
+
+
+    </TableRow>
+</TableLayout>

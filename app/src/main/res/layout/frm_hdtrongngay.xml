@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorStrokeButton">
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_margin="@dimen/size10dp"
+        android:padding="@dimen/size10dp">
+        <TextView
+            android:id="@+id/txtNgayhientai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/clock"
+            android:drawablePadding="@dimen/size10dp"
+            android:padding="@dimen/size15dp"
+            android:text="ngayhientai"
+            android:background="@color/colorWhite"
+            android:layout_centerVertical="true"/>
+
+        <Button
+            android:id="@+id/btnXemPhieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/xemphieu" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_margin="@dimen/size10dp"
+        android:padding="@dimen/size10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txttieude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/money_bag"
+            android:drawablePadding="@dimen/size10dp"
+            android:padding="@dimen/size10dp"
+            android:text="@string/tienthutrongngey"
+            android:textSize="@dimen/size18sp"
+            android:textStyle="bold"
+            android:background="@color/colorWhite"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/txtDoanhthu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size40dp"
+            android:layout_marginTop="@dimen/size80dp"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textSize="@dimen/size40dp" />
+    </LinearLayout>
+
+</LinearLayout>

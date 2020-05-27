@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">App OrderFood</string>
+
+    <string name="tendangnhap">User name</string>
+    <string name="matkhau">Password</string>
+    <string name="ngaysinh">Birthday</string>
+    <string name="cmnd">ID Card</string>
+    <string name="dongy">Yes</string>
+    <string name="thoat">Exit</string>
+    <string name="dangky">Create an acount</string>
+    <string name="nhaptendangnhap">You don't enter username</string>
+    <string name="nhapmatkhau">You don't enter password</string>
+    <string name="themthanhcong">successful</string>
+    <string name="themthatbai">failed</string>
+    <string name="dangnhap">Log in</string>
+    <string name="tendangnhapormatkhaukodung">The username or password is incorrect</string>
+    <string name="dulieudaydu">Bạn cần nhập đầy đủ thông tin</string>
+    <string name="themnhanvien">Thêm nhân viên</string>
+    <string name="sua">Update</string>
+    <string name="xoa">Delete</string>
+    <string name="xoathanhcong">delete successful</string>
+    <string name="xoakothanhcong">failed</string>
+    <string name="capnhatnhanvien">Update staff</string>
+    <string name="hoatdongtrongngay">active in day</string>
+    <string name="doangthutheonhanvien">business tracking</string>
+    <string name="soluongkhach">Số lượng khách</string>
+    <string name="lichsuphieu">Lịch sử phiếu</string>
+    <string name="roikhoi">Exit</string>
+    <string name="xemphieu">Xem phiếu</string>
+    <string name="tienthutrongngey">cash in date</string>
+    <string name="thongke">statistical</string>
+    <string name="ngaylap">Date</string>
+    <string name="danhsachhoadon">Bill List</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Title!-->
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_order_thanh_toan">MainOrderThanhToanActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tabbled_order">Gọi món ăn</string>
+    <string name="title_activity_tabble_order">Gọi món ăn</string>
+    <string name="title_activity_about">Thông tin liên hệ</string>
+    <string name="title_activity_table_list">Sơ đồ bàn</string>
+    <string name="title_activity_order">Danh sách Order</string>
+    <string name="title_activity_chitietmenu">Thông tin món ăn</string>
+    <string name="title_activity_menufood">Danh mục món ăn</string>
+    <string name="title_activity_menu_update">Cài đặt chung</string>
+    <string name="title_activity_menugroup_updte">Nhóm món ăn</string>
+    <string name="title_activity_thanhtoan">Thanh toán</string>
+    <string name="title_activity_tabled_order">Cửa sổ nhanh</string>
+    <string name="title_activity_thong_ke">Hoạt động trong ngày</string>
+
+    <!--Activity chi tiết nemu!-->
+    <string name="activity_chi_tiet_menu_Ten_mon">Dishe</string>
+    <string name="activity_chi_tiet_menu_Gia_tien">Price</string>
+    <string name="activity_chi_tiet_menu_Button_dat_ban">Go to table</string>
+
+    <!--Activity insert khu vực!-->
+    <string name="activity_insert_khuvuc_tenkhuvuc">Nhập tên khu vực</string>
+    <string name="activity_insert_khuvuc_button">Yes</string>
+
+    <!--Activity insert table!-->
+    <string name="activity_insert_table_khuvuc">Chọn khu vực</string>
+    <string name="activity_insert_table_ban">Table name</string>
+    <string name="activity_insert_table_button">Yes</string>
+
+    <!--Activity order!-->
+    <string name="activity_order_ban">Table</string>
+    <string name="activity_order_sl">Number</string>
+    <string name="activity_order_sp">Số phiếu</string>
+    <string name="activity_order_tongtien">Total</string>
+    <string name="activity_order_button">Save</string>
+
+    <!--Activity thanh toán!-->
+    <string name="activity_thanh_toan_Ban">Table</string>
+    <string name="activity_thanh_toan_sl">Nuber</string>
+    <string name="activity_thanh_toan_sp">Số phiếu</string>
+    <string name="activity_thanh_toan_tongtien">Total</string>
+    <string name="activity_thanh_toan_button_thanhtoan">Pay</string>
+    <string name="activity_thanh_toan_button_themmon">add dishes</string>
+    <string name="activity_thanh_toan_thaydoisl">change the quantity</string>
+    <string name="activity_thanh_toan_huymon">cancel the dish</string>
+
+    <!--Thống kê!-->
+
+    <!--Activity thêm món ăn!-->
+    <string name="activity_update_nhommonan">group of dishes</string>
+    <string name="activity_update_tenmon">Dish</string>
+    <string name="activity_update_giatien">Price</string>
+    <string name="activity_update_button_chonanh">Chọn ảnh</string>
+    <string name="activity_update_button_OK">OK</string>
+
+    <!--Activity Cài đặt!-->
+    <string name="activity_update_menu_themnhommonan">add food group</string>
+    <string name="activity_update_menu_themmonan">add dishes</string>
+    <string name="activity_update_menu_themban">New table</string>
+    <string name="activity_update_menu_themkhuvuc">Thêm khu vực mới</string>
+    <string name="activity_update_menu_capnhat">Cập nhật ảnh món ăn</string>
+    <string name="activity_update_menu_nv">Quản lý nhân viên</string>
+
+    <!--Activity thêm nhóm món ăn!-->
+    <string name="activity_update_menu_group_tennhom">Tên nhóm món ăn</string>
+    <string name="activity_update_menu_group_button_chonanh">Chọn ảnh...</string>
+    <string name="activity_update_menu_group_button_OK">OK</string>
+
+    <!--content_main!-->
+    <string name="content_main_monan">Food</string>
+    <string name="content_main_banan">Desk</string>
+    <string name="content_main_xemnhanh">Pay</string>
+    <string name="content_main_thongke">Statistical</string>
+    <string name="content_main_caidat">Settings</string>
+    <string name="content_main_lienhe">About</string>
+
+    <!--content_main!-->
+    <string name="custom_dialog_sl_ok">OK</string>
+    <string name="custom_dialog_sl_cancel">Cancel</string>
+
+    <!--item thanh toán!-->
+    <string name="item_thanhtoan_tenmon">Dish name</string>
+
+    <!--item fragment thanh toán!-->
+    <string name="item_frmThanhtoan_tongtien">Total</string>
+    <string name="item_frmThanhtoan_ban">Table</string>
+    <string name="item_frmThanhtoan_sophieu">Số phiếu</string>
+    <string name="item_frmThanhtoan_maphieu">mã phiếu</string>
+
+    <!--item gridview món ăn!-->
+    <string name="item_gv_monan_tenmon">Dish</string>
+    <string name="item_gv_monan_dongia">price</string>
+</resources>
