@@ -153,35 +153,36 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
         btnDongy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tenDN = edTenDN.getText().toString();
-                String matKhau = edMatKhau.getText().toString();
-                switch (groupGT.getCheckedRadioButtonId()) {
-                    case R.id.rdNam:
-                        giotinh = "Nam";
-                        break;
-                    case R.id.rdNu:
-                        giotinh = "Nữ";
-                        break;
+                if(kiemTraDangKy()){
+                    String tenDN = edTenDN.getText().toString();
+                    String matKhau = edMatKhau.getText().toString();
+                    switch (groupGT.getCheckedRadioButtonId()) {
+                        case R.id.rdNam:
+                            giotinh = "Nam";
+                            break;
+                        case R.id.rdNu:
+                            giotinh = "Nữ";
+                            break;
+                    }
+                    String ngaySinh = edNgaySinh.getText().toString();
+                    int CMND = Integer.parseInt(edCMND.getText().toString());
+                    if (edTenDN == null && edTenDN.equals("")) {
+                        Toast.makeText(DangKyActivity.this, getResources().getString(R.string.nhaptendangnhap) + "", Toast.LENGTH_LONG).show();
+                    } else if (edMatKhau == null && edMatKhau.equals("")) {
+                        Toast.makeText(DangKyActivity.this, getResources().getString(R.string.nhapmatkhau) + "", Toast.LENGTH_LONG).show();
+                    }
+                    int maQuyen;
+                    if (landautien == 1) {
+                        maQuyen = 1;
+                    } else {
+                        int vitri = spQuyen.getSelectedItemPosition();
+                        maQuyen = quyenList.get(vitri).getMaQuyen();
+                    }
+                    if (manv != 0) {
+                        SuaNhanVien(CMND, maQuyen, tenDN, matKhau, giotinh, ngaySinh);
+                    } else
+                        ThemNhanVien(CMND, maQuyen, tenDN, matKhau, giotinh, ngaySinh);
                 }
-                String ngaySinh = edNgaySinh.getText().toString();
-                int CMND = Integer.parseInt(edCMND.getText().toString());
-                if (edTenDN == null && edTenDN.equals("")) {
-                    Toast.makeText(DangKyActivity.this, getResources().getString(R.string.nhaptendangnhap) + "", Toast.LENGTH_LONG).show();
-                } else if (edMatKhau == null && edMatKhau.equals("")) {
-                    Toast.makeText(DangKyActivity.this, getResources().getString(R.string.nhapmatkhau) + "", Toast.LENGTH_LONG).show();
-                }
-                int maQuyen;
-                if (landautien == 1) {
-                    maQuyen = 1;
-                } else {
-                    int vitri = spQuyen.getSelectedItemPosition();
-                    maQuyen = quyenList.get(vitri).getMaQuyen();
-                }
-                if (manv != 0) {
-                    SuaNhanVien(CMND, maQuyen, tenDN, matKhau, giotinh, ngaySinh);
-                } else
-                    ThemNhanVien(CMND, maQuyen, tenDN, matKhau, giotinh, ngaySinh);
-
             }
         });
 
@@ -222,8 +223,12 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
         contentValues.put("ngaySinh", ngaySinh);
         contentValues.put("CMND", CMND);
         contentValues.put("maQuyen", maQuyen);
-        long r = database.update("NhanVien", contentValues, "id=?" ,new String[]{manv+""});
-        Toast.makeText(this, "Sửa " + r, Toast.LENGTH_SHORT).show();
+        long r = database.update("NhanVien", contentValues,"id=?" ,new String[]{manv+""});
+        if(r > 0) {
+            Intent intent = new Intent(this, NhanVienActivity.class);
+            intent.putExtra("message", "Update nhân viên thành công!");
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -238,5 +243,29 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
 
                 break;
         }
+    }
+    private boolean kiemTraDangKy(){
+        if(edTenDN.getText().toString().equals("") || edMatKhau.getText().toString().equals("") || edNgaySinh.getText().toString().equals("") || edCMND.getText().toString().equals("")){
+            Toast.makeText(DangKyActivity.this, "Bạn cần nhập đủ thông tin!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        int check = kiemTraTenDN(edTenDN.getText().toString());
+        if((manv == 0 && check != 0) || (manv != 0 && manv != check)){
+            Toast.makeText(DangKyActivity.this, "Tên đăng nhập đã tồn tại!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
+
+    private int kiemTraTenDN(String tenDN) {
+        int manv=0;
+        String query="SELECT *FROM NhanVien where tenDN= '"+tenDN+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        cursor.moveToFirst();
+        if(!cursor.isAfterLast()){
+            manv =cursor.getInt(0);
+            cursor.moveToNext();
+        }
+        return  manv;
     }
 }

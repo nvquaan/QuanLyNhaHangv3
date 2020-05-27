@@ -32,6 +32,7 @@ public class NhanVienActivity extends AppCompatActivity {
 
     String DATABASE_NAME = "QLNhaHang.sqlite";
     SQLiteDatabase database;
+    String message;
 
     int maquyen = 0;
     SharedPreferences sharedPreferences;
@@ -40,7 +41,10 @@ public class NhanVienActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nhan_vien);
-
+        message = getIntent().getStringExtra("message");
+        if(message != null) {
+            Toast.makeText(NhanVienActivity.this ,message, Toast.LENGTH_SHORT).show();
+        }
         HienThiNhanVien();
         loadNhanVien();
 
@@ -109,6 +113,7 @@ public class NhanVienActivity extends AppCompatActivity {
                 if (XoaNhanVien(manv)) {
                     Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoathanhcong) + "", Toast.LENGTH_SHORT).show();
                     HienThiNhanVien();
+                    loadNhanVien();
                 } else
                     Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoakothanhcong) + "", Toast.LENGTH_SHORT).show();
                 break;
