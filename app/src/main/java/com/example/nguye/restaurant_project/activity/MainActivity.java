@@ -184,12 +184,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent=new Intent(MainActivity.this, TableList.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_location) {
+        } else if (id == R.id.nav_logout) {
 
-        } else if (id == R.id.nav_social) {
-
-        } else if (id == R.id.nav_about) {
-            Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+            Intent intent = new Intent(MainActivity.this, DangNhapActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
 
