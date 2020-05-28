@@ -1,10 +1,12 @@
 package com.example.nguye.restaurant_project.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -102,7 +104,7 @@ public class NhanVienActivity extends AppCompatActivity {
         int id = item.getItemId();
         AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int vitri = menuInfo.position;
-        int manv = nhanVienArrayList.get(vitri).getMaNV();
+        final int manv = nhanVienArrayList.get(vitri).getMaNV();
         switch (id) {
             case R.id.sua:
                 Intent intent = new Intent(NhanVienActivity.this, DangKyActivity.class);
@@ -110,12 +112,27 @@ public class NhanVienActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.xoa:
-                if (XoaNhanVien(manv)) {
-                    Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoathanhcong) + "", Toast.LENGTH_SHORT).show();
-                    HienThiNhanVien();
-                    loadNhanVien();
-                } else
-                    Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoakothanhcong) + "", Toast.LENGTH_SHORT).show();
+                final AlertDialog.Builder builder=new AlertDialog.Builder(NhanVienActivity.this);
+                builder.setTitle("Bạn có muốn xoá?");
+                builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (XoaNhanVien(manv)) {
+                            Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoathanhcong) + "", Toast.LENGTH_SHORT).show();
+                            HienThiNhanVien();
+                            loadNhanVien();
+                        } else
+                            Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoakothanhcong) + "", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                        .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
                 break;
         }
         return true;

@@ -183,37 +183,6 @@ public class ThanhToanActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode==KeyEvent.KEYCODE_BACK){
-//            Intent intent=new Intent(ThanhToanActivity.this, TableList.class);
-
-            if(orderArrayList.size()==0){
-                final AlertDialog.Builder builder=new AlertDialog.Builder(ThanhToanActivity.this);
-                builder.setTitle("Bạn muốn hủy hóa đơn?");
-                builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        huyHoaDon();
-                        updateTrangThaiBan();
-                    }
-                })
-                .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-            else {
-                setResult(RESULT_CANCELED);
-                finish();
-            }
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 
     private void huyHoaDon() {
         database=Database.initDatabase(this,DATABASE_NAME);
