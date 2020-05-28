@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.nguye.restaurant_project.activity.MainActivity;
 import com.example.nguye.restaurant_project.R;
+import com.example.nguye.restaurant_project.activity.MenuActivity;
 import com.example.nguye.restaurant_project.adapter.MenuAdapter;
 import com.example.nguye.restaurant_project.model.Menu;
 
@@ -146,6 +147,8 @@ public class UpdateActivity extends AppCompatActivity {
             if(MainActivity.database.INSERTFOOD(lastSelectedItem,tenmon,giatien,b))
             {
                 Toast.makeText(this,"Thành công!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateActivity.this, MenuActivity.class);
+                startActivity(intent);
             }
             else
             {
