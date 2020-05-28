@@ -34,7 +34,7 @@ public class AboutActivity extends AppCompatActivity{
         dsContents = new ArrayList<>();
 
         dsContents.add(new Contents("Ứng dụng quản lý nhà hàng","By CNTT1 - K58",R.drawable.ic_menu_home));
-        dsContents.add(new Contents("Email","abc@gmail.com",R.drawable.ic_menu_email));
+        dsContents.add(new Contents("Giáo viên hướng dẫn","Trần Vũ Hiếu",R.drawable.ic_face));
         dsContents.add(new Contents("Copyright","Copyright © 2020 QuanNV - HoaiPV. All rights reserved",R.drawable.ic_menu_about));
 
 
