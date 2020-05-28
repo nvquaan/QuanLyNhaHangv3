@@ -51,9 +51,7 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_ky);
         landautien = getIntent().getIntExtra("landautien", 0);
-        Toast.makeText(DangKyActivity.this, "" + landautien, Toast.LENGTH_SHORT).show();
         manv = getIntent().getIntExtra("manv", 0);
-//        Toast.makeText(DangKyActivity.this, manv+"", Toast.LENGTH_LONG).show();
         addControls();
         if (manv != 0) {
             txtTieude.setText(getResources().getString(R.string.capnhatnhanvien) + "");
@@ -64,7 +62,6 @@ public class DangKyActivity extends AppCompatActivity implements View.OnFocusCha
             edNgaySinh.setText(nhanVien.getNgaySinh());
             edCMND.setText(String.valueOf(nhanVien.getCMND()));
             String giotinh = nhanVien.getGioiTinh();
-//            Toast.makeText(DangKyActivity.this, giotinh+"", Toast.LENGTH_LONG).show();
             if (giotinh.equals("Nam")) {
                 rdNam.setChecked(true);
             } else if (giotinh.equals("Nữ")) {
