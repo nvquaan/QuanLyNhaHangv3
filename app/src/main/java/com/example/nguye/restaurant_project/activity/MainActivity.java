@@ -173,7 +173,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_menu) {
-            Toast.makeText(MainActivity.this,"Bạn chọn" + item,Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
             startActivity(intent);
 
