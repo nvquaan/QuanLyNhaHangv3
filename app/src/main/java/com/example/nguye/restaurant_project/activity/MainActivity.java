@@ -57,17 +57,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         //xuLySaoChepCsdlTuAssetVaoHeThong();
 
-        //Đọc quyền từ file xml
         sharedPreferences =getSharedPreferences("luuquyen", Context.MODE_PRIVATE);
         maquyen=sharedPreferences.getInt("maquyen",0);
 
-
         getControls();
         addEvents();
-        if(maquyen!=1){
-            btnReport.setEnabled(false);
-            btnSetting.setEnabled(false);
-        }
     }
 
     private void getControls() {
@@ -100,23 +94,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,TabbleOrderActivity.class);
-                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Updating...", Toast.LENGTH_LONG).show();
             }
         });
 
         btnReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,ThongKeActivity.class);
-                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Updating...", Toast.LENGTH_LONG).show();
             }
         });
         btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,MenuUpdateActivity.class);
-                startActivity(intent);
+                if(maquyen == 1) {
+                    Intent intent = new Intent(MainActivity.this, MenuUpdateActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, "Don't have permission!", Toast.LENGTH_LONG).show();
+                }
             }
         });
         btnAbout.setOnClickListener(new View.OnClickListener() {
@@ -128,46 +124,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        if(maquyen==1){
-            MenuItem menuItem=menu.add(1,R.menu.main,1,"Cài đặt");
-        menuItem.setIcon(R.drawable.settingmain);
-        menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-//            getMenuInflater().inflate(R.menu.main, menu);
-            return true;
-        }
-        return false;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -178,36 +134,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_menu) {
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
             startActivity(intent);
-
-        } else if (id == R.id.nav_cart) {
-
+        } else if (id == R.id.nav_setting) {
+            if(maquyen == 1) {
+                Intent intent=new Intent(MainActivity.this, MenuUpdateActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(MainActivity.this, "Don't have permission!", Toast.LENGTH_LONG).show();
+            }
         } else if (id == R.id.nav_table) {
-
-            Intent intent=new Intent(MainActivity.this, TableList.class);
+            Intent intent = new Intent(MainActivity.this, TableList.class);
             startActivity(intent);
-
         } else if (id == R.id.nav_logout) {
-
             Intent intent = new Intent(MainActivity.this, DangNhapActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
-
-
         return true;
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode==KeyEvent.KEYCODE_BACK){
-
                 final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Bạn đăng xuất?");
+                builder.setTitle("Bạn có muốn thoát không?");
                 builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, DangNhapActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
+                        finish();
+                        finishAffinity();
+                        System.exit(0);
                     }
                 })
                 .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
@@ -218,7 +172,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
-
         }
         return super.onKeyDown(keyCode, event);
     }

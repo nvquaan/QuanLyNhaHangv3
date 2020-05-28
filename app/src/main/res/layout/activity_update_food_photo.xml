@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/lvUpdateFoodPhoto"
         android:layout_width="match_parent"
-        android:layout_height="258dp" />
+        android:layout_height="487dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

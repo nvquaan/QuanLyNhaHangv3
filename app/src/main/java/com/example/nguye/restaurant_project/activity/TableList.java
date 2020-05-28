@@ -1,9 +1,11 @@
 package com.example.nguye.restaurant_project.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -103,44 +105,53 @@ public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItem
     private void addEvents() {
         grvTable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int idban=tableArrayList.get(i).getId();
-                int idKhuVuc=tableArrayList.get(i).getKhuVuc();
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                final int idban = tableArrayList.get(i).getId();
                 if(tableArrayList.get(i).isTrangThai()){
-                    Intent intent=new Intent(TableList.this,ThanhToanActivity.class);
-                    intent.putExtra("idban",idban);
-                    intent.putExtra("idKhuVuc",idKhuVuc);
-                    startActivity(intent);
+                    final AlertDialog.Builder builder=new AlertDialog.Builder(TableList.this);
+                    builder.setTitle("Chuyển bàn về trạng thái trống?");
+                    builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String sql = "Update BAN set TrangThai = 0 where id = " + idban;
+                            database.execSQL(sql);
+                            tableArrayList.get(i).setTrangThai(false);
+                            tableAdapter.notifyDataSetChanged();
 
+                        }
+                    })
+                            .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }else{
-                    laySoPhieu();
-                    soPhieuMax=soPhieuMax+1;
-                    Intent intent=new Intent(TableList.this,OrderActivity.class);
-                    intent.putExtra("soPhieuMax",soPhieuMax);
-                    intent.putExtra("idban",idban);
-                    intent.putExtra("idKhuVuc",idKhuVuc);
-                    startActivity(intent);
+                    final AlertDialog.Builder builder=new AlertDialog.Builder(TableList.this);
+                    builder.setTitle("Bạn có muốn đặt bàn này không?");
+                    builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String sql = "Update BAN set TrangThai = 1 where id = " + idban;
+                            database.execSQL(sql);
+                            tableArrayList.get(i).setTrangThai(true);
+                            tableAdapter.notifyDataSetChanged();
+
+                        }
+                    })
+                            .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
-
-
-//                Bundle bundle=new Bundle();
-//                bundle.putInt("idKhuVuc",idKhuVuc);
-//                bundle.putInt("idban",idban);
-//                OrderActivity tabOrder=new OrderActivity();
-//                tabOrder.setArguments(bundle);
-
-
             }
         });
-
-    }
-
-    private void laySoPhieu() {
-        database=Database.initDatabase(this,DATABASE_NAME);
-        String sql="select max(id) from HoaDon";
-        Cursor cursor=database.rawQuery(sql,null);
-        cursor.moveToFirst();
-        soPhieuMax=cursor.getInt(0);
 
     }
 
@@ -169,7 +180,5 @@ public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItem
             tableArrayList.add(new Table(id,ten,trangThai,maKhuVuc));
         }
         tableAdapter.notifyDataSetChanged();
-
-//        view.setBackgroundColor(Color.BLUE);
     }
 }

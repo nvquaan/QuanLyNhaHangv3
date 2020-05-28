@@ -41,12 +41,6 @@ public class TableAdapter extends ArrayAdapter<Table> {
             viewHolder=new ViewHolder();
             viewHolder.txtTenBan=(TextView) convertView.findViewById(R.id.txtTenBan);
             viewHolder.itemBan=(LinearLayout)convertView.findViewById(R.id.linearLayoutBan);
-//            viewHolder.txtIdTenBan = convertView.findViewById(R.id.txtIdTenBan);
-//            viewHolder.itemBan=(LinearLayout)convertView.findViewById(R.id.itemBan);
-
-
-
-
             convertView.setTag(viewHolder);
         }else
         {
@@ -60,12 +54,10 @@ public class TableAdapter extends ArrayAdapter<Table> {
         else{
             viewHolder.itemBan.setBackground(viewHolder.itemBan.getContext().getResources().getDrawable(R.drawable.dinhdang_khuvuc));
         }
-//        viewHolder.txtIdTenBan.setText(Integer.toString(table.getId()));
         return convertView;
     }
 
     public class ViewHolder{
-        //dinh nghia ra cac doi tuong view de gan voi monan_items layout
         TextView txtTenBan;
 //        TextView txtIdTenBan;
         LinearLayout itemBan;

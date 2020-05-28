@@ -111,33 +111,6 @@ public class Database extends SQLiteOpenHelper {
         return Authen;
     }
 
-    public boolean InsertHoaDon(Integer id, String dNgayLap, Integer tongTien, boolean trangThai, Integer maBan, Integer maNV, Integer maKhuVuc )throws IOException
-    {
-        boolean Authen;
-        try
-        {
-            SQLiteDatabase database = getWritableDatabase();
-            String query = "insert into HoaDon values (null,?,?,null,?,?,?)";
-            //database = openOrCreateDatabase(DATABASE_NAME,MODE_PRIVATE,null);
-            SQLiteStatement statement = database.compileStatement(query);
-            statement.clearBindings();
-            statement.bindString(1,Integer.toString(id));
-            statement.bindString(2, String.valueOf(dNgayLap));
-            statement.bindString(3,Integer.toString(tongTien));
-            statement.bindString(4, String.valueOf(trangThai));
-            statement.bindString(5,Integer.toString(maBan));
-            statement.bindString(6,Integer.toString(maNV));
-            statement.bindString(7,Integer.toString(maKhuVuc));
-            statement.executeInsert();
-            Authen = true;
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-            Authen = false;
-        }
-
-        return Authen;
-    }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 

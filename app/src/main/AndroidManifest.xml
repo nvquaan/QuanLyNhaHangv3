@@ -27,10 +27,6 @@
             android:label="@string/title_activity_menu"
             android:parentActivityName=".activity.MainActivity" />
         <activity
-            android:name=".activity.OrderActivity"
-            android:label="@string/title_activity_tabbled_order"
-            android:parentActivityName=".activity.TableList" />
-        <activity
             android:name=".activity.ChiTietMenu"
             android:label="@string/title_activity_chitietmenu"
             android:parentActivityName=".activity.MenuFoodActivity" />
@@ -50,25 +46,18 @@
             android:name=".update_button.UpdateMenuGroup"
             android:label="@string/title_activity_menu_update"
             android:parentActivityName=".update_button.MenuUpdateActivity" />
-        <activity
-            android:name=".activity.ThanhToanActivity"
-            android:label="@string/title_activity_thanhtoan"
-            android:parentActivityName=".activity.TableList" />
         <activity android:name=".update_button.InsertTable"
             android:label="@string/title_activity_table_update"
             android:parentActivityName=".activity.MenuActivity" />
 
-        <activity android:name=".update_button.InsertKhuvuc" />
-        <activity android:name=".update_button.UpdateFoodPhoto" />
-        <activity
-            android:name=".activity.TabbleOrderActivity"
-            android:label="@string/title_activity_tabbled_order"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity
-            android:name=".activity.ThongKe"
-            android:label="Hoạt động trong ngày"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.TKThang" />
+        <activity android:name=".update_button.InsertKhuvuc"
+            android:label="@string/title_activity_create_area"
+            android:parentActivityName=".update_button.MenuUpdateActivity"/>
+
+        <activity android:name=".update_button.UpdateFoodPhoto"
+            android:label="@string/title_activity_update_picture"
+            android:parentActivityName=".update_button.MenuUpdateActivity" />
+
         <activity
             android:name=".activity.DangKyActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -84,16 +73,6 @@
         <activity android:name=".activity.NhanVienActivity"
             android:label="@string/title_activity_nhanvien_update"
             android:parentActivityName=".update_button.MenuUpdateActivity" />
-        <activity
-            android:name=".activity.ThongKeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/thongke"/>
-        <activity
-            android:name=".activity.ThongKeHoaDonActivity"
-            android:label="@string/thongke" />
-        <activity android:name=".activity.DanhSachHoaDonTheoMaNVActivity"
-            android:label="@string/danhsachhoadon"
-            android:parentActivityName=".activity.ThongKeActivity"></activity>
     </application>
 
 </manifest>

@@ -114,7 +114,7 @@
     <string name="content_main_banan">Bàn ăn</string>
     <string name="content_main_xemnhanh">Xem nhanh</string>
     <string name="content_main_thongke">Thống kê</string>
-    <string name="content_main_caidat">Cài đặt</string>
+    <string name="content_main_caidat">Quản lý</string>
     <string name="content_main_lienhe">Liên hệ</string>
 
     <!--content_main!-->
@@ -133,4 +133,6 @@
     <!--item gridview món ăn!-->
     <string name="item_gv_monan_tenmon">Tên món</string>
     <string name="item_gv_monan_dongia">Đơn giá</string>
+    <string name="title_activity_create_area">Thêm khu vực</string>
+    <string name="title_activity_update_picture">Cập nhật ảnh</string>
 </resources>

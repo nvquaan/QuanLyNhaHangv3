@@ -115,7 +115,7 @@
     <string name="content_main_banan">Desk</string>
     <string name="content_main_xemnhanh">Pay</string>
     <string name="content_main_thongke">Statistical</string>
-    <string name="content_main_caidat">Settings</string>
+    <string name="content_main_caidat">Quản lý</string>
     <string name="content_main_lienhe">About</string>
 
     <!--content_main!-->
@@ -134,4 +134,6 @@
     <!--item gridview món ăn!-->
     <string name="item_gv_monan_tenmon">Dish</string>
     <string name="item_gv_monan_dongia">price</string>
+    <string name="title_activity_create_area">Thêm khu vực</string>
+    <string name="title_activity_update_picture">Cập nhật ảnh</string>
 </resources>

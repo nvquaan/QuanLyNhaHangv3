@@ -15,9 +15,9 @@
             android:icon="@drawable/ic_menu_reserved"
             android:title="Bàn ăn" />
         <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_menu_cart"
-            android:title="Giỏ hàng" />
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_setting"
+            android:title="Quản lý" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_logout"

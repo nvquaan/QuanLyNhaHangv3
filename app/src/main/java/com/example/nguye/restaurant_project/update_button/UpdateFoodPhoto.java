@@ -176,7 +176,6 @@ public class UpdateFoodPhoto extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 String query = "select * from Food where sTenMonAn LIKE N'%" + s + "%'";
-
                 return false;
             }
 
