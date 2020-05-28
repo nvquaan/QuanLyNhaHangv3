@@ -1,6 +1,7 @@
 package com.example.nguye.restaurant_project.update_button;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.nguye.restaurant_project.R;
 import com.example.nguye.restaurant_project.activity.Database;
+import com.example.nguye.restaurant_project.activity.MenuActivity;
 
 import java.util.ArrayList;
 
@@ -88,6 +90,8 @@ public class InsertTable extends AppCompatActivity {
         contentValues.put("KhuVuc",lastSelectedItem);
         database.insert("Ban",null,contentValues);
         Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(InsertTable.this, MenuUpdateActivity.class);
+        startActivity(intent);
     }
 
     private void addControls() {

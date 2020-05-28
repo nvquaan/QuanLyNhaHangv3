@@ -24,6 +24,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.nguye.restaurant_project.R;
+import com.example.nguye.restaurant_project.activity.MenuActivity;
 import com.example.nguye.restaurant_project.activity.MenuFoodActivity;
 import com.example.nguye.restaurant_project.adapter.MenuChiTietAdapter;
 import com.example.nguye.restaurant_project.adapter.UpdateFoodPhotoAdapter;
@@ -113,6 +114,8 @@ public class UpdateFoodPhoto extends AppCompatActivity {
         contentValues.put("Picture",b);
         database.update("Food",contentValues,"IDFood=?",new String[] {selectedItems+""});
         Toast.makeText(this, "Cập nhật thành công ảnh cho món "+dsChiTiet.get(selectedItems-1).getTenMon(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(UpdateFoodPhoto.this, MenuUpdateActivity.class);
+        startActivity(intent);
     }
 
     private void addControls() {

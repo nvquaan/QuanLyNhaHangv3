@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.nguye.restaurant_project.R;
 import com.example.nguye.restaurant_project.activity.MainActivity;
+import com.example.nguye.restaurant_project.activity.MenuActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -74,6 +75,8 @@ public class UpdateMenuGroup extends AppCompatActivity {
             if(MainActivity.database.INSERTMENUFOOD(groupmenu,b))
             {
                 Toast.makeText(this,"Thành công!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateMenuGroup.this, MenuUpdateActivity.class);
+                startActivity(intent);
             }
             else
             {

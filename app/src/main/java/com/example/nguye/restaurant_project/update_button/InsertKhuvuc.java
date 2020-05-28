@@ -1,6 +1,7 @@
 package com.example.nguye.restaurant_project.update_button;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.nguye.restaurant_project.R;
 import com.example.nguye.restaurant_project.activity.Database;
+import com.example.nguye.restaurant_project.activity.MenuActivity;
 
 public class InsertKhuvuc extends AppCompatActivity {
     EditText edtTenKhuVucInsert;
@@ -48,6 +50,8 @@ public class InsertKhuvuc extends AppCompatActivity {
         contentValues.put("TenKhuVuc",edtTenKhuVucInsert.getText().toString());
         database.insert("KhuVuc",null,contentValues);
         Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(InsertKhuvuc.this, MenuUpdateActivity.class);
+        startActivity(intent);
 
     }
 
