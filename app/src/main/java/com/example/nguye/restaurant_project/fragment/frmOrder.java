@@ -28,9 +28,9 @@ import java.util.ArrayList;
  */
 
 public class frmOrder extends Fragment {
-    GridView grvTable;
-    ArrayList<Table> tableArrayList;
-    frmOrderAdapter tableAdapter;
+    GridView grvTable; //hien thi ds ban
+    ArrayList<Table> tableArrayList; //luu du lieu
+    frmOrderAdapter tableAdapter; //do du lieu len gridview
     View view;
 
     int soPhieuMax;
@@ -54,7 +54,7 @@ public class frmOrder extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 laySoPhieu();
-                soPhieuMax=soPhieuMax+1;
+                //soPhieuMax=soPhieuMax+1;
                 int ma=1;
                 int idban=tableArrayList.get(i).getId();
                 int idKhuVuc=tableArrayList.get(i).getKhuVuc();
@@ -70,10 +70,9 @@ public class frmOrder extends Fragment {
 
     private void laySoPhieu() {
         database=Database.initDatabase(getActivity(),DATABASE_NAME);
-        String sql="select max(id) from HoaDon";
+        String sql="select * from HoaDon";
         Cursor cursor=database.rawQuery(sql,null);
-        cursor.moveToFirst();
-        soPhieuMax=cursor.getInt(0);
+        soPhieuMax=cursor.getCount();
 
     }
 
@@ -91,7 +90,6 @@ public class frmOrder extends Fragment {
             tableArrayList.add(new Table(id,tenBan,trangThai,khuVuc,tenKhuVuc));
         }
         tableAdapter.notifyDataSetChanged();
-//        Toast.makeText(getActivity(),tableArrayList.size()+"",Toast.LENGTH_LONG).show();
     }
 
     private void addControls() {

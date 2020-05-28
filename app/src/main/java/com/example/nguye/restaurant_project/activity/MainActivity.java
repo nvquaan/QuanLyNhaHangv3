@@ -191,57 +191,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         }
 
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
-//    private void xuLySaoChepCsdlTuAssetVaoHeThong() {
-//        File file = getDatabasePath(DATABASE_NAME);
-//        if (!file.exists())
-//        {
-//            try
-//            {
-//                CoppyDatabaseFromAsset();
-//                Toast.makeText(MainActivity.this,"Database coppy complete",Toast.LENGTH_SHORT).show();
-//            }
-//            catch (Exception e)
-//            {
-//                Toast.makeText(MainActivity.this,e.toString(),Toast.LENGTH_LONG).show();
-//            }
-//
-//        }
-//    }
-//
-//    private void CoppyDatabaseFromAsset() {
-//        try
-//        {
-//            InputStream inputStream = getAssets().open(DATABASE_NAME);
-//            String outFileName = getDatabasePath();
-//            File f = new File(getApplicationInfo().dataDir+DB_PATH_SUFFIX);
-//            if (!f.exists())
-//            {
-//                f.mkdir();
-//            }
-//            OutputStream outputStream = new FileOutputStream(outFileName);
-//            byte[] buffer = new byte[1024];
-//            int length;
-//            while ((length = inputStream.read(buffer))>0)
-//            {
-//                outputStream.write(buffer,0,length);
-//            }
-//            outputStream.flush();
-//            outputStream.close();
-//            inputStream.close();
-//        }
-//        catch (IOException e)
-//        {
-//
-//            Log.e("LOI_SaoChep",e.toString());
-//        }
-//    }
-//
-//    private String getDatabasePath(){
-//        return getApplicationInfo().dataDir+DB_PATH_SUFFIX+DATABASE_NAME;
-//
-//    }
 }

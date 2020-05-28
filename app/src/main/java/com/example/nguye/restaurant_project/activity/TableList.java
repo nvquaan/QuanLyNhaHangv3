@@ -24,10 +24,10 @@ import java.util.ArrayList;
 public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItemClickListener{
     ArrayList<KhuVuc> khuVucArrayList;
     KhuVucAdapter khuVucAdapter;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView; //hien thi list khu vuc
     LinearLayoutManager layoutManager;
 
-    GridView grvTable;
+    GridView grvTable; // hien thi ban trong khu vuc
     ArrayList<Table> tableArrayList;
     TableAdapter tableAdapter;
 
@@ -52,51 +52,6 @@ public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItem
     }
 
 
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-//        super.onCreateContextMenu(menu, v, menuInfo);
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.menu_ban, menu);
-//    }
-//
-//    @Override
-//    public boolean onContextItemSelected(MenuItem item) {
-//        AdapterView.AdapterContextMenuInfo info= (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-//        int pos=info.position;
-//        Table table=tableArrayList.get(pos);
-//
-//        int id=item.getItemId();
-//        switch (id){
-//            case R.id.menuThanhToan:
-//                //Thanh toán hóa đơn
-//                ThanhToanHoaDon(table);
-//                break;
-//            case  R.id.menuChinhSua:
-//                //Chỉnh sửa hóa đơn
-//                ChinhSuaHoaDon(table);
-//                break;
-//        }
-//
-//        return super.onContextItemSelected(item);
-//    }
-
-//    private void ChinhSuaHoaDon(Table table) {
-//        int idban=table.getId();
-//        int idKhuVuc=table.getKhuVuc();
-//        Intent intent=new Intent(TableList.this,OrderActivity.class);
-//        intent.putExtra("idban",idban);
-//        intent.putExtra("idKhuVuc",idKhuVuc);
-//        startActivity(intent);
-//    }
-//
-//    private void ThanhToanHoaDon(Table table) {
-//        int idban=table.getId();
-//        int idKhuVuc=table.getKhuVuc();
-//        Intent intent=new Intent(TableList.this,ThanhToanActivity.class);
-//        intent.putExtra("idban",idban);
-//        intent.putExtra("idKhuVuc",idKhuVuc);
-//        startActivity(intent);
-//    }
 
     private void addControls() {
         recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
