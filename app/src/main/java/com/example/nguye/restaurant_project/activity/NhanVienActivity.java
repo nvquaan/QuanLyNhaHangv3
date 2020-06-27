@@ -115,8 +115,8 @@ public class NhanVienActivity extends AppCompatActivity {
                 final AlertDialog.Builder builder=new AlertDialog.Builder(NhanVienActivity.this);
                 builder.setTitle("Bạn có muốn xoá?");
                 builder.setPositiveButton("Đồng ý",new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
                         if (XoaNhanVien(manv)) {
                             Toast.makeText(NhanVienActivity.this, getResources().getString(R.string.xoathanhcong) + "", Toast.LENGTH_SHORT).show();
                             HienThiNhanVien();

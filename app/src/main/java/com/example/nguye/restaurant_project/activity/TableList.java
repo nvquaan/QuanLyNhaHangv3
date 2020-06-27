@@ -102,7 +102,7 @@ public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItem
     }
 
 
-    private void addEvents() {
+    private void addEvents() { //xu ly su kien khi bam vao ban`
         grvTable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
@@ -166,7 +166,7 @@ public class TableList extends AppCompatActivity implements KhuVucAdapter.OnItem
 
 
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, int position) { //xu li su kien khi bam vao khu vuc
         int idKhuVuc =khuVucArrayList.get(position).getId();
          //truy vấn và khai thác dữ liệu
         Cursor cursor1=database.rawQuery("SELECT * FROM Ban where KhuVuc = "+idKhuVuc,null);

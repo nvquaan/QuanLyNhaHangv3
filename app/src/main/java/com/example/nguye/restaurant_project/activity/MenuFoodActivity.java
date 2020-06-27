@@ -39,7 +39,6 @@ public class MenuFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_food);
-        xuLySaoChepCsdlTuAssetVaoHeThong();
         addControls();
         addEvents();
     }
@@ -65,11 +64,9 @@ public class MenuFoodActivity extends AppCompatActivity {
 
     private void xyLyHienDsMenuChiTiet() {
         //Nhận id group menu từ activity MenuActivity để select ra món ăn theo nhóm
-        Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("id");
         int id = MenuActivity.idGroupFood;
         //bắt đầu select
-        database = openOrCreateDatabase(DATABASE_NAME,MODE_PRIVATE,null);
+        database=Database.initDatabase(this,DATABASE_NAME);
         String query = "select * from Food where IDGroupMenu = " + id;
         Cursor cursor = database.rawQuery(query,null);
         dsChiTiet.clear();
@@ -93,53 +90,5 @@ public class MenuFoodActivity extends AppCompatActivity {
         gvMenuChiTiet.setAdapter(menuChiTietAdapter);
     }
 
-    private void xuLySaoChepCsdlTuAssetVaoHeThong() {
-        File file = getDatabasePath(DATABASE_NAME);
-        if (!file.exists())
-        {
-            try
-            {
-                CoppyDatabaseFromAsset();
-                Toast.makeText(MenuFoodActivity.this,"Database coppy complete",Toast.LENGTH_SHORT).show();
-            }
-            catch (Exception e)
-            {
-                Toast.makeText(MenuFoodActivity.this,e.toString(),Toast.LENGTH_LONG).show();
-            }
 
-        }
-    }
-
-    private void CoppyDatabaseFromAsset() {
-        try
-        {
-            InputStream inputStream = getAssets().open(DATABASE_NAME);
-            String outFileName = getDatabasePath();
-            File f = new File(getApplicationInfo().dataDir+DB_PATH_SUFFIX);
-            if (!f.exists())
-            {
-                f.mkdir();
-            }
-            OutputStream outputStream = new FileOutputStream(outFileName);
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = inputStream.read(buffer))>0)
-            {
-                outputStream.write(buffer,0,length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            inputStream.close();
-        }
-        catch (IOException e)
-        {
-
-            Log.e("LOI_SaoChep",e.toString());
-        }
-    }
-
-    private String getDatabasePath(){
-        return getApplicationInfo().dataDir+DB_PATH_SUFFIX+DATABASE_NAME;
-
-    }
 }
